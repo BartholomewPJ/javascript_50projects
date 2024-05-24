@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+	--ps-bg-color: rgba(87, 84, 236, 0.7);
+	--xbox-bg-color: rgba(43, 43, 43, 0.8);
+	--ps-btn-hover-color: rgba(87, 84, 236, 1);
+	--xbox-btn-hover-color: rgba(28, 122, 28, 1);
+	--hover-width: 75%;
+	--other-width: 25%;
+	--speed: 0.5s;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.centered {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: grid;
+	place-items: center;
+}
+
+h1 {
+	font-size: 4.5vw;
+	color: white;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.btn {
+	text-decoration: none;
+	color: white;
+	border: 0.2rem solid white;
+	font-size: 1.7vw;
+	width: 15vw;
+	padding: 1.5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: all 0.3s;
+}
+
+.ps-btn:hover {
+	background-color: var(--ps-btn-hover-color);
+	border-color: var(--ps-btn-hover-color);
+}
+
+.xbox-btn:hover {
+	background-color: var(--xbox-btn-hover-color);
+	border-color: var(--xbox-btn-hover-color);
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #333;
+}
+
+/* .split {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+} */
+
+.ps {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+
+	left: 0;
+	background: url('ps.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.ps::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--ps-bg-color);
+}
+
+.xbox {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+
+	right: 0;
+	background: url('xbox.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.xbox::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--xbox-bg-color);
+}
+
+.xbox,
+.ps,
+.xbox::before,
+.ps::before {
+	transition: all var(--speed) ease-in-out;
+}
+
+.hover-ps .ps {
+	width: 75%;
+}
+
+.hover-ps .xbox {
+	width: 25%;
+}
+
+.hover-xbox .ps {
+	width: 25%;
+}
+
+.hover-xbox .xbox {
+	width: 75%;
+}
