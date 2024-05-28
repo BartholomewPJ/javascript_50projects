@@ -14,10 +14,6 @@ a:hover {
     color:#90A955;
 }
 
-.list {
-    list-style: none;
-}
-
 li {
     border:2px solid #132A13;
     border-radius:5px;
@@ -38,13 +34,11 @@ color:lightyellow;
 }
 
 .list {
+    list-style: none;
     width:100vw;
     height:auto;
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    grid-template-rows:repeat(13,auto);
-    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     background-color:#4F772D;
-    /* align-items:center; */
-    /* justify-content:space-evenly; */
+    
 }
